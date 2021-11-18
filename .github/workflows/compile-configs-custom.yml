@@ -56,6 +56,8 @@ jobs:
 
         sed -i "s/#define DEFAULT_AXIS_STEPS_PER_UNIT.*/#define DEFAULT_AXIS_STEPS_PER_UNIT { 80, 80, 400, 97.8 }/g" Marlin/Configuration.h
 
+        sed -i "s/#define S_CURVE_ACCELERATION/\/\/#define S_CURVE_ACCELERATION/g" Marlin/Configuration.h
+
         sed -i -E "s/#define INVERT_Z_DIR.*/#define INVERT_Z_DIR false/g" Marlin/Configuration.h
         sed -i -E "s/#define (X|Y|Z|E0)_DRIVER_TYPE.*/#define \1_DRIVER_TYPE TMC2209/g" Marlin/Configuration.h
         sed -i -E "s/#define INVERT_(X|Y|E0)_DIR.*/#define INVERT_\1_DIR true/g" Marlin/Configuration.h
