@@ -56,6 +56,8 @@ jobs:
 
         sed -i "s/#define DEFAULT_AXIS_STEPS_PER_UNIT.*/#define DEFAULT_AXIS_STEPS_PER_UNIT { 80, 80, 400, 97.8 }/g" Marlin/Configuration.h
 
+        sed -i "s/^#define NOZZLE_TO_PROBE_OFFSET.*/#define NOZZLE_TO_PROBE_OFFSET { -44, -7, -2.75 }/g" Marlin/Configuration.h
+
         sed -i "s/#define S_CURVE_ACCELERATION/\/\/#define S_CURVE_ACCELERATION/g" Marlin/Configuration.h
 
         sed -i -E "s/#define INVERT_Z_DIR.*/#define INVERT_Z_DIR false/g" Marlin/Configuration.h
