@@ -66,7 +66,7 @@ jobs:
 
         if ($HS); then TEMP=; else TEMP='\/\/'; fi;
         sed -i "s/[^ ]*#define LIN_ADVANCE/#define LIN_ADVANCE/g" Marlin/Configuration_adv.h
-        sed -i "s/[^ ]*#define BLTOUCH_HS_MODE/$TEMP#define BLTOUCH_HS_MODE/g" Marlin/Configuration_adv.h
+        sed -i "s/[^ ]*#define BLTOUCH_HS_MODE/$TEMP#define BLTOUCH_HS_MODE true/g" Marlin/Configuration_adv.h
         sed -i "s/[^ ]*#define USE_CONTROLLER_FAN/#define USE_CONTROLLER_FAN/g" Marlin/Configuration_adv.h
         sed -i "s/#define CHOPPER_TIMING CHOPPER_DEFAULT_12V/#define CHOPPER_TIMING CHOPPER_DEFAULT_24V/g" Marlin/Configuration_adv.h
         sed -i -E "s/#define (X|Y|E0)_CURRENT .*/#define \1_CURRENT 580/g" Marlin/Configuration_adv.h
